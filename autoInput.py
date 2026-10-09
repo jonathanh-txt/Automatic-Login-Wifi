@@ -11,3 +11,4 @@ with sync_playwright() as p:
     page.locator("input[placeholder='Username']").fill("900")
     page.locator("input[placeholder='Password']").fill("900")
     page.locator("input[type='submit']").click()
+    browser.close()
