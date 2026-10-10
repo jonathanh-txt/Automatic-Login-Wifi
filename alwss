@@ -1,0 +1,44 @@
+#!/bin/bash
+configFile="$HOME/Automatic-Login-Wifi/AutomaticLoginWifi.conf"
+if ! [ -f "$configFile" ]; then
+    echo "Config file doesn't exists"
+    exit 1
+fi
+wifiName=$(sed -n '1p' "$configFile")
+wifiUsername=$(sed -n '2p' "$configFile")
+wifiPassword=$(sed -n '3p' "$configFile")
+
+if [ -z "$wifiName" ]; then
+    echo "Please enter your wifi name"
+    read -r -p "Enter your wifi name: " wifiName
+    
+fi
+
+if [ -z "$wifiUsername" ]; then
+    echo "Please enter your username"
+    read -r -p "Enter your username: " wifiUsername
+    
+fi
+
+if [ -z "$wifiPassword" ]; then
+    echo "Please enter your password"
+    read -r -p "Enter your password: " wifiPassword
+
+fi
+
+
+printf '%s\n%s\n%s\n' \
+    "$wifiName" \
+    "$wifiUsername" \
+    "$wifiPassword" > "$configFile"
+
+
+if ping 8.8.8.8 -c 3; then
+    notify-send "Network is connected"
+    exit 0
+    else
+        cd $HOME/Automatic-Login-Wifi
+        source .venv/bin/activate
+        notify-send "$wifiName" "Run Auto Login"
+        python autoInput.py
+fi
