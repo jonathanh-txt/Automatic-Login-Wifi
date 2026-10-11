@@ -31,7 +31,6 @@ if ! python -m pip -V; then
 
 fi
 echo "installing..."
-bash
 sudo cp $HOME/Automatic-Login-Wifi/alwss /usr/local/bin/
 sudo chmod +x /usr/local/bin/alwss
 echo "Making virtual environment"
