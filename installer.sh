@@ -41,4 +41,3 @@ source $HOME/Automatic-Login-Wifi/.venv/bin/activate
 echo "Installing playwright"
 python -m pip install playwright
 alwss
-exit 0

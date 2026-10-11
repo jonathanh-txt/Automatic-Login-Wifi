@@ -1,4 +1,4 @@
-Installation command
+Installation command:
 
 git clone https://github.com/jonathanh-txt/Automatic-Login-Wifi
 
