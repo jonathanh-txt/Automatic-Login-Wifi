@@ -32,15 +32,8 @@ if ! python -m pip -V; then
 fi
 echo "installing..."
 bash
-if ls $HOME/.local/bin/ >dev/null 2>&1; then
-    sudo cp $HOME/Automatic-Login-Wifi/alwss $HOME/.local/bin/
-    sudo chmod +x $HOME/.local/bin/alwss
-    else
-        mkdir -p $HOME/.local/bin/
-        sudo cp $HOME/Automatic-Login-Wifi/alwss $HOME/.local/bin/
-        sudo chmod +x $HOME/.local/bin/alwss
-fi
-
+sudo cp $HOME/Automatic-Login-Wifi/alwss /usr/local/bin/
+sudo chmod +x /usr/local/bin/alwss
 echo "Making virtual environment"
 cd $HOME/Automatic-Login-Wifi
 python -m venv $HOME/Automatic-Login-Wifi/.venv
