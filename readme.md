@@ -1,4 +1,4 @@
-# Automatic wifi login script for connect wifi that require login with login formI
+# Automatic wifi login script for connect wifi that require login with login form
 
 ## to use this script you can run this command **alwss**
 
